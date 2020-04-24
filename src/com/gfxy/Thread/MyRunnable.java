@@ -2,7 +2,7 @@ package com.gfxy.Thread;
 
 public class MyRunnable implements Runnable {
 
-	private static int i = 20; // ��Ʊ��
+	private static int i = 20; //
 	boolean flag = true;
 
 	@Override
