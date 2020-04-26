@@ -18,7 +18,7 @@ public class MyClass extends Object{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					instance = new MyClass();
+				instance = new MyClass();
 				}	
 			}
 		}
