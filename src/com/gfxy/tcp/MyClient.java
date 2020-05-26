@@ -12,7 +12,7 @@ public class MyClient {
 	public static void main(String[] args) {
 		try {
 			
-			System.out.println("¿Í»§¶Ë");
+			System.out.println("å®¢æˆ·ç«¯");
 			Socket socket = new Socket("localhost", 8888);
 			System.out.println(socket.getPort());
 			System.out.println(socket.getLocalPort());

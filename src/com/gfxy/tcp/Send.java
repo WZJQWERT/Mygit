@@ -7,19 +7,19 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
- * ·¢ËÍÏß³Ì
+ * å‘é€çº¿ç¨‹
  * @author Administrator
  *
  */
 public class Send implements Runnable {
 	
 	private Socket socket;
-	//¶ÁÈ¡¿ØÖÆÌ¨ĞÅÏ¢
+	//è¯»å–æ§åˆ¶å°ä¿¡æ¯
 	private BufferedReader console;
-	//Ïò·şÎñÆ÷·¢ËÍÊı¾İ
+	//å‘æœåŠ¡å™¨å‘é€æ•°æ®
 	private DataOutputStream outputStream;
 	
-	//Ïß³ÌÊÇ·ñÕı³£ÔËĞĞÖĞ
+	//çº¿ç¨‹æ˜¯å¦æ­£å¸¸è¿è¡Œä¸­
 	boolean isRunning = true;
 	public Send() {
 		console = new BufferedReader(new InputStreamReader(System.in));		
@@ -32,7 +32,7 @@ public class Send implements Runnable {
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			isRunning = false; // ³öÁËÒì³£ Í£Ö¹Ïß³Ì
+			isRunning = false; // å‡ºç°å¼‚å¸¸ï¼Œåœæ­¢çº¿ç¨‹
 			try {
 				console.close();
 				outputStream.close();

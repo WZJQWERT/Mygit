@@ -12,7 +12,7 @@ import javax.xml.stream.events.StartDocument;
 
 public class MyServer{
 	
-	//±£´æËùÓĞÓë¿Í»§¶Ë½¨Á¢µÄÍ¨µÀ
+	//ä¿æŒä¸æ‰€æœ‰å®¢æˆ·ç«¯å»ºç«‹çš„é€šé“
 	private List<MyChannel> allChannel = new ArrayList<MyChannel>();
 	
 	public static void main(String[] args) {
@@ -25,14 +25,14 @@ public class MyServer{
 	}
 	
 	public void start() throws IOException {
-		System.out.println("·şÎñÆ÷");
+		System.out.println("æœåŠ¡å™¨");
 		ServerSocket serverSocket =  new ServerSocket(8888);
 		
 		while(true) {
 			try {
 				Socket socket = serverSocket.accept();
 				MyChannel channel = new MyChannel(socket);
-				allChannel.add(channel); //Óë¿Í»§¶Ë½¨Á¢µÄÍ¨µÀ¼ÓÈëÈİÆ÷Í¬Ò»¹ÜÀí
+				allChannel.add(channel); //ä¸å®¢æˆ·ç«¯å»ºç«‹çš„é€šé“åŠ å…¥å®¹å™¨ç»Ÿä¸€ç®¡ç†
 				new Thread(channel).start();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -43,14 +43,14 @@ public class MyServer{
 	
 	
 	/**
-	 * Ò»ÌõºÍ¿Í»§¶ËµÄÍ¨Â·
+	 * Ò»ï¿½ï¿½ï¿½Í¿Í»ï¿½ï¿½Ëµï¿½Í¨Â·
 	 * @author Administrator
 	 *
 	 */
 	class MyChannel implements Runnable {
-		// ½ÓÊÕÁ÷
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		private DataInputStream dis;
-		//·¢ËÍÁ÷
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		private DataOutputStream dos;
 		
 		private boolean isRunning = true;
@@ -75,7 +75,7 @@ public class MyServer{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				
-				// ´ÓËùÓĞµÄÍ¨µÀÖĞÒÆ³ı Õâ¸ö³öÒì³£µÄÍ¨Â·
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Æ³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½Í¨Â·
 				allChannel.remove(this);
 			}
 			
@@ -96,7 +96,7 @@ public class MyServer{
 		}
 		
 		/**
-		 * °ÑĞÅÏ¢·¢ËÍ¸øÆäËû¿Í»§¶Ë
+		 * ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
 		 */
 		void sendMsgToOthers() {
 			String msg = this.receiveMsg();
@@ -104,7 +104,7 @@ public class MyServer{
 				if(c == this) {
 					continue;
 				}else {
-					c.sendMsg("·şÎñÆ÷·µ»ØÊı¾İ£º"+msg);
+					c.sendMsg("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ£ï¿½"+msg);
 				}
 				
 			}
